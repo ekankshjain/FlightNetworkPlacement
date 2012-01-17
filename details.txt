@@ -1,0 +1,72 @@
+Problem 1:
+Satack.java:
+
+-Used Stack to arrange the order as required.
+-For arrangement i have checked for the previous value and compared current value with (previous value +1)
+-for first push the value is not checked but for other values order is checked.
+-Functions:
+  Push(): not Same as usual stack has.
+	  First StackOverflow is checked and than only as per order value is pushed otherwise not.
+  Pop(): Same as Usual Stack has. 
+
+-Pattern: 	First main program takes the proper pattern.
+		Than the pattern is solved in the pattern function and proper output is printed.
+
+-Function:
+   Pattern():	First the pattern is converted to string and than by extracting one by one character and again converting each character to numeric value validation for pattern is done.
+
+   takeinput() & takelinput(): takes the proper integer and long value respectively.
+
+
+NOTE: (My assumptions)
+- no pattern is valid if it has only one push possible anywhere in the pattern.
+- Atleast 2 corresponding push is required(mandatory) to declare pattern as valid (if it is)
+eg:8765432109(invalid)
+Because after Push(0) pop() is performed, which is illegal as per the push pattern.
+
+eg:4321098765(invalid)
+Because after single push() pop() is not performed anywhere, which is legal as per the push pattern.
+
+- Last pattern can be from min 2-digit to maximum 10-digit.
+(Assumption complete)
+
+
+
+
+Problem 2: (I have generated 2 programs with slight changes)
+
+
+eliminate.java: (n needs to be entered once only)
+
+
+1)I have used the Circular Linklist to solve the Elimination Game.
+2)Main function takes the m and data(1..m) as input.
+3)then the function get_winner() is called which loops the list and deletes the value on 'nth' iteration. Then the loop continues from next node value of deleted node and again loop. This continues until there is only one node in the list (here next time as list size is decreased n does not decrease with respect to size of list to make n<size, n remains same as entered first time).
+4)If list contains only one node (i.e. Winner) loop breaks and winner is declared.
+5) Functions:
+	-add(): adds the node to list.
+	-delete(): deletes the node to the referencing position.
+	-toString()(Overrided): Displays the list.
+	-isEmpty(): checks for emptyness of list.
+	-get_when_one(): checks whether list has only one node or not.
+	-getnext(): iterates to next node.
+
+	-takeinput() & datainput : takes the proper integer and object value respectively.
+
+
+Note:  (My assumptions)
+- Values in data field in each node is taken as Object.
+- As list can contain same data n times no repeatation constraint is implied on list.
+- We can also able to solve this game through array but array takes much time to copy each time (at the time of internal data deletion).
+- As this game requires frequent deletion where as single time insertion i prefered Circular Link list over arrays.
+
+
+
+
+
+eliminate_2.java: (All details same as above program)(n is randomly generated each time size of m is decreased.)
+
+- Only diffrence is in 3rd statement above(here next time as list size is decreased n is randomly selcted between 0 and new size of list to make n<size). 
+
+
+(Assumptions are made only if not mentioned in pdf)
